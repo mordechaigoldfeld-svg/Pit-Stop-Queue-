@@ -160,32 +160,42 @@ export async function radioCall() {
 }
 
 
-async function searchCarByNumber(number) {
+export async function searchCarByNumber(number) {
     try{
-
-    }catch(err){
-        console.log(err)
-    }
-    
-}
-
-
-
-
-export async function carExists(number) {
-    try{
-        const cars = await readFile();
-        const exists = cars.some((car)=>{car.carNumber === number})
-        if(!exists){
+        const cars = await readfile()
+        const car = cars.cars.find((res)=>{return res.carNumber === number})
+        if(!car){
             console.log(`car:${number} not found`)
             return false
-        }return true
+        }
+        console.log(car)
+        return true
 
-        
     }catch(err){
         console.log(err)
     }
     
 }
 
-console.log(carExists(44))
+
+
+
+
+
+// export async function carExists(number) {
+//     try{
+//         const cars = await readFile();
+//         const exists = cars.some((car)=>{car.carNumber === number})
+//         if(!exists){
+//             console.log(`car:${number} not found`)
+//             return false
+//         }return true
+
+        
+//     }catch(err){
+//         console.log(err)
+//     }
+    
+// }
+
+// console.log(carExists(44))

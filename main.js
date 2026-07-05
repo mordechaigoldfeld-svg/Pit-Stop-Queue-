@@ -1,4 +1,4 @@
-import {showStatus,showStart,showCarsWaiting,nextCar,radioCall} from "./services/service-menager.js" 
+import {showStatus,showStart,showCarsWaiting,nextCar,radioCall,searchCarByNumber} from "./services/service-menager.js" 
 
 
 async function main(){
@@ -12,6 +12,9 @@ async function main(){
      console.log("============================")
      console.log()
      await radioCall()
+     console.log("--- Search for a car by number ---")
+     await searchCarByNumber(44)
+     searchCarByNumber(99)
 
     }catch(err){
         console.log(err)
