@@ -165,10 +165,10 @@ export async function searchCarByNumber(number) {
         const cars = await readfile()
         const car = cars.cars.find((res)=>{return res.carNumber === number})
         if(!car){
-            console.log(`car:${number} not found`)
+            console.log(`error car:${number} not found`)
             return false
         }
-        console.log(car)
+        console.log(car.carNumber)
         return true
 
     }catch(err){
@@ -182,20 +182,5 @@ export async function searchCarByNumber(number) {
 
 
 
-// export async function carExists(number) {
-//     try{
-//         const cars = await readFile();
-//         const exists = cars.some((car)=>{car.carNumber === number})
-//         if(!exists){
-//             console.log(`car:${number} not found`)
-//             return false
-//         }return true
 
-        
-//     }catch(err){
-//         console.log(err)
-//     }
-    
-// }
 
-// console.log(carExists(44))
