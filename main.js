@@ -1,4 +1,4 @@
-import {showStatus,showStart,showCarsWaiting} from "./services/service-menager.js" 
+import {showStatus,showStart,showCarsWaiting,nextCar,radioCall} from "./services/service-menager.js" 
 
 
 async function main(){
@@ -7,6 +7,11 @@ async function main(){
      await showStatus()
      console.log()
      await showCarsWaiting()
+     console.log()
+     await nextCar()
+     console.log("============================")
+     console.log()
+     await radioCall()
 
     }catch(err){
         console.log(err)
